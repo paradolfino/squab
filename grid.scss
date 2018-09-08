@@ -1,0 +1,55 @@
+
+//standard styles
+.layout  {
+  
+}
+
+.sect-4-pillars {
+  display: grid;
+  grid-template-columns: 25% 25% 25% 25%;
+  grid-template-rows: auto;
+  div {
+    
+    height: 300px;
+    border: 1px solid black;
+    transition: 1s;
+  }
+}
+
+//breakpoints
+
+@media (max-width: 575px) {
+  
+    .sect-4-pillars {
+      grid-template-columns: 50% 50%;
+      grid-template-rows: auto;
+      
+      div:first-child, div:nth-child(2) {
+        animation: 0.7s collapseX;
+      }
+      
+      div:nth-child(3), div:nth-child(4) {
+        animation: 0.1s collapseY;
+      }
+    }
+    
+  
+}
+
+@media (max-width: 768px) {
+  
+    .sect-4-pillars {
+      
+    }
+  
+}
+
+@keyframes collapseX {
+  0% { transform: translateX(-50vw); }
+  100% { transform: 0; }
+}
+
+@keyframes collapseY {
+  0% { transform: translateY(-50vw); }
+  100% { transform: 0; }
+}
